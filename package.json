@@ -1,0 +1,54 @@
+{
+  "name": "serbia-is",
+  "version": "1.0.0",
+  "description": "Serbia is...",
+  "scripts": {
+    "start": "yarn run dev",
+    "clean": "gulp clean",
+    "dev": "gulp dev & eleventy --config=eleventy.js --serve",
+    "build": "gulp build && eleventy --config=eleventy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igr/serbiais"
+  },
+  "author": {
+    "name": "Igor Spasić",
+    "email": "igor.spasic@gmail.com",
+    "url": "https://igo.rs/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/igr/serbiais/issues"
+  },
+  "homepage": "https://serbia.is",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.7.1",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-image-resize": "^0.13.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-serve": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-plumber": "^1.2.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-babel": "^8.0.0",
+    "browser-sync": "^2.26.3",
+    "webpack-stream": "^5.2.1",
+    "del" : "^4.0.0",
+    "concurrent-transform": "^1.0.0",
+    "require-dir": "^1.2.0",
+    "luxon": "^1.11.4",
+    "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.0.2",
+    "clean-css": "^4.2.1",
+    "html-minifier": "^3.5.21",
+    "uglify-es": "^3.3.9"
+  },
+  "dependencies": {}
+}

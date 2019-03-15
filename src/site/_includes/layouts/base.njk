@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>{% include "css/main.css" %}</style>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+
+    <main><div class="wrapper">
+
+      {{ content | safe }}
+
+    </div></main>
+
+    {% include "footer.njk" %}
+    <script>{% include "js/all.js" %}</script>
+  </body>
+</html>
