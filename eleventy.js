@@ -13,9 +13,15 @@ const markdown     = require('markdown-it')({
     permalink: false,
   });
 
+const src = './src/11ty';
+
 module.exports = function(eleventyConfig) {
 
+  // CONFIG
+
   let env = process.env.ELEVENTY_ENV;
+
+  eleventyConfig.setDataDeepMerge(true);
 
   // ALIASES
 
@@ -27,11 +33,14 @@ module.exports = function(eleventyConfig) {
 
   // FILTERS
 
-  eleventyConfig.addFilter("squash", require("./src/filters/squash.js") );
-  eleventyConfig.addFilter("dateDisplay", require("./src/filters/dates.js"))
+  eleventyConfig.addFilter("squash", require(`${src}/squash.js`) );
+
+  eleventyConfig.addFilter("dateDisplay", require(`${src}/dates.js`))
+
   eleventyConfig.addFilter("dateHuman", dateObj => {
     return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
   });
+
   eleventyConfig.addFilter("dateStamp", dateObj => {
     return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
   });
@@ -39,6 +48,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("cssmin", function(code) {
     return new CleanCSS({}).minify(code).styles;
   });
+
   eleventyConfig.addFilter("jsmin", function(code) {
     let minified = UglifyJS.minify(code);
     if (minified.error) {
@@ -49,6 +59,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter('markdownify', str => markdown.render(str));
+
   eleventyConfig.addFilter('markdownify_inline', str =>
     markdown.renderInline(str),
   );
@@ -70,11 +81,9 @@ module.exports = function(eleventyConfig) {
 
   // COLLECTIONS
 
-  eleventyConfig.addCollection("posts", function(collection) {
-    return collection.getAllSorted().filter(function(item) {
-      return item.inputPath.match(/^\.\/posts\//) !== null;
-    });
-  });
+//  eleventyConfig.addCollection('posts', collection => {
+//    return collection.getFilteredByGlob('posts/**/*.md');
+//  });
 
 
   // PASSTHROUGH

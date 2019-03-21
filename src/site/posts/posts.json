@@ -1,0 +1,5 @@
+{
+    "layout": "layouts/post",
+    "tags" : "post",
+    "permalink": "subdir/{{ title | slug }}/index.html"
+}
