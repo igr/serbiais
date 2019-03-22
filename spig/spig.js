@@ -82,6 +82,11 @@ class Spig {
     return this.use((file) => frontmatter(file, attributes));
   }
 
+  markdown() {
+    const markdown = require('./plugins/markdown');
+    return this.use((file) => markdown(file));
+  }
+
 }
 
 module.exports = Spig;

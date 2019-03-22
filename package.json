@@ -47,11 +47,16 @@
     "luxon": "^1.11.4",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
+    "markdown-it-container": "^2.0.0",
+    "markdown-it-attrs": "^2.3.2",
+    "markdown-it-html5-media": "^0.6.0",
     "clean-css": "^4.2.1",
     "html-minifier": "^3.5.21",
     "uglify-es": "^3.3.9",
     "fancy-log": "^1.3.3",
-    "merge2": "^1.2.3"
+    "merge2": "^1.2.3",
+    "highlight.js": "^9.15.6",
+    "path" : "^0.12.7"
   },
   "dependencies": {}
 }
