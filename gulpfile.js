@@ -1,33 +1,13 @@
-const gulp    = require('gulp');
-const project = require('./project.js');
+"use strict";
 
-// gulp tasks live in their own files, for the sake of clarity.
-
-require('require-dir')('./gulp-tasks');
+const Spig     = require('./spig/spig');
+require('require-dir')('./spig');
 
 
-// watch folders for changes
 
-gulp.task("watch", function() {
-  gulp.watch(project.srcDir + '/images/**/*', gulp.parallel('images'));
-  gulp.watch(project.srcDir + '/css/**/*.scss', gulp.parallel('sass'));
-  gulp.watch(project.srcDir + '/js/**/*.js', gulp.parallel('js'));
-  gulp.watch(project.srcDir + '/static/**/*', gulp.parallel('static'));
-});
-
-
-// build
-
-gulp.task('build', gulp.parallel(
-  'static',
-  'sass',
-  'js',
-  'images'
-));
-
-// build and watch
-
-gulp.task('dev', gulp.series(
-  'build',
-  'watch'
-));
+Spig
+  .on('/**/*.md')
+  .frontmatter()
+  .use((file) => {
+    console.log(file.data);
+  });

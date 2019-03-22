@@ -1,5 +1,4 @@
 
-
 export function handler(event, context, callback) {
 
   // grab the parameters from the request

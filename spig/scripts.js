@@ -1,4 +1,5 @@
-const project      = require('../project.js');
+"use strict";
+
 const gulp         = require('gulp');
 const uglify       = require('gulp-uglify');
 const concat       = require('gulp-concat');
@@ -7,9 +8,11 @@ const plumber      = require('gulp-plumber');
 const webpack      = require('webpack-stream');
 const babel        = require('gulp-babel');
 const browserSync  = require('browser-sync').create();
+const Spig         = require('./spig');
 
 gulp.task('js', () => {
-  return gulp.src([ project.srcDir + '/js/**/*.js' ])
+  const site = Spig.site();
+  return gulp.src([ site.srcDir + site.dirJs + '/**/*.js' ])
     .pipe(plumber())
     .pipe(webpack({
       mode: 'production'
@@ -18,9 +21,9 @@ gulp.task('js', () => {
       .pipe(babel({
         presets: [ '@babel/env' ]
       }))
-      .pipe(concat('all.js'))
+      .pipe(concat('main.js'))
       .pipe(uglify())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(project.outJsDir))
+    .pipe(gulp.dest(site.outDir + site.dirJs))
     .pipe(browserSync.stream());
 });
