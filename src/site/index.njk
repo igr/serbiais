@@ -1,41 +1,30 @@
 ---
-title: Welcome!
-layout: default
+title: "Serbia is..."
+layout: "main"
 ---
 
-<main class="grid" style="padding: 5rem 5rem 0 5rem;">
+{% block main %}
+{% set siteIds = site.collections.id %}
 
-  {% for p in collections.post %}
-    <div><a href="{{ p.url }}"><img src="{{ p.url }}square.png"></a></div>
+<div class="grid">
+  {% set ids = siteIds | extractIds | firstN(8) %}
+
+  {% for id in ids %}
+    {% set p = siteIds[id][0] %}
+    <div><a href="{{ p.url }}"><img src="{{ p.url }}i256.jpg"></a></div>
   {% endfor %}
 
-    <div><a href="djordje-maric"><img src="djordje-maric/square.png"></a></div>
-    <div><a href="vera-ristic"><img src="vera-ristic/square.jpg"></a></div>
-    <div><a href="zuehlke"><img src="zuehlke/logo.png"></a></div>
-    <div><a href="djura-slavnic"><img src="djura-slavnic/square.jpg"></a></div>
-    <div><a href="daniel-spasic"><img src="daniel-spasic/square.jpg"></a></div>
-
-    <div><a href="vera-ristic"><img src="vera-ristic/square.jpg"></a></div>
-    <div><a href="daniel-spasic"><img src="daniel-spasic/square.jpg"></a></div>
-    <div><a href="djura-slavnic"><img src="djura-slavnic/square.jpg"></a></div>
-    <div><a href="djordje-maric"><img src="djordje-maric/square.png"></a></div>
-    <div><a href="zuehlke"><img src="zuehlke/logo.png"></a></div>
-
-</main>
+</div>
 
 <div style="text-align: center; font-size: 8rem; letter-spacing: 20px;">SERBIA IS</div>
 
-<div class="main grid" style="padding: 0 5rem 5rem 5rem;">
+<div class="grid-small">
+  {% set ids = siteIds | extractIds %}
 
-    <div><a href="djordje-maric"><img src="djordje-maric/square.png"></a></div>
-    <div><a href="vera-ristic"><img src="vera-ristic/square.jpg"></a></div>
-    <div><a href="zuehlke"><img src="zuehlke/logo.png"></a></div>
-    <div><a href="djura-slavnic"><img src="djura-slavnic/square.jpg"></a></div>
-    <div><a href="daniel-spasic"><img src="daniel-spasic/square.jpg"></a></div>
-
-    <div><a href="vera-ristic"><img src="vera-ristic/square.jpg"></a></div>
-    <div><a href="daniel-spasic"><img src="daniel-spasic/square.jpg"></a></div>
-    <div><a href="djura-slavnic"><img src="djura-slavnic/square.jpg"></a></div>
-
+  {% for id in ids %}
+    {% set p = siteIds[id][0] %}
+    <div><a href="{{ p.url }}"><img src="{{ p.url }}/i128.jpg"></a></div>
+  {% endfor %}
 
 </div>
+{% endblock %}

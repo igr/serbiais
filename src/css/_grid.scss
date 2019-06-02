@@ -1,9 +1,25 @@
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
+  grid-gap: 0;
   div {
-    display: block;
-    text-align: center;
+    font-size: 0;
+  }
+  a img {
+    transition: .5s ease;
+  }
+  a:hover img {
+    opacity: 0.3;
+  }
+}
+
+.grid-small {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  justify-content: center;
+  grid-gap: 0;
+  div {
+    font-size: 0;
   }
 }

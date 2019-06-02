@@ -17,7 +17,7 @@ p {
 }
 
 h1 {
-	font-size: 3rem;
+	font-size: 8rem;
 	margin-top: 20px;
 	padding: 10px 0;
 	font-weight: bold;
@@ -45,9 +45,6 @@ code {
 a {
 	text-decoration: none;
 }
-img {
-	width: 100%;
-}
 
 blockquote {
 	font-style: italic;
@@ -63,14 +60,13 @@ blockquote {
 
 main, .main {
   display: grid;
-  grid-template-columns: 1fr minmax(auto, 1120px) 1fr;
+  grid-template-columns: 1fr minmax(auto, 1024px) 1fr;
   font-size: 2rem;
 }
 
-
 .wrapper {
   grid-column: 2;
-  font-size: 2em;
+  //font-size: 2em;
   line-height: 1.2;
 }
 

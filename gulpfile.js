@@ -1,13 +1,37 @@
 "use strict";
 
 const Spig = require('./spig/spig');
-require('require-dir')('./spig');
+require('require-dir')('./spig/tasks');
+
+// PAGES
 
 Spig
-  .on('/**/*.md')
-  .frontmatter()
-  .markdown()
+  .on('/**/*.{md,njk}')
+
+  ._("INIT")
+  .pageCommon()
+  .collectAttr('id')
   .use((file) => {
-    console.log(file.path);
-    console.log(file.relative);
-  });
+    if (file.attr.hasOwnProperty('id')) {
+      file.attr.layout = "id"
+    }
+  })
+
+  ._("RENDER")
+  .render()
+  .applyTemplate()
+  .htmlMinify()
+;
+
+
+// IMAGES
+
+Spig
+  .on('/**/*.{png,jpg,gif}')
+
+  ._("INIT")
+  .assetCommon()
+
+  ._("ASSETS")
+  .imageMinify()
+;

@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>{% include "css/main.css" %}</style>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
     <title>{{ title }}</title>
   </head>
   <body>
 
     <main><div class="wrapper">
 
-      {{ content | safe }}
+        {% block main %}{% endblock %}
 
     </div></main>
 
     {% include "footer.njk" %}
-    <script>{% include "js/all.js" %}</script>
+    <script> include "js/all.js" </script>
   </body>
 </html>

@@ -1,0 +1,15 @@
+{% extends "base.njk" %}
+
+{% block main %}
+  <h1 style="position: relative; top: 60px; left: 20px; text-shadow: 4px 4px 10px #000000;">{{ title }}</h1>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+  <img src="i512.jpg">
+  <div style="padding-top: 200px">
+    {{ content | safe }}
+  </div>
+  </div>
+
+
+
+{% endblock %}
