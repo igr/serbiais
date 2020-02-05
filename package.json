@@ -22,7 +22,7 @@
     "url": "https://github.com/igr/serbiais/issues"
   },
   "homepage": "https://serbia.is",
-  "dependencies": {
-    "spig": "file:./spig"
+  "devDependencies": {
+    "spignite": "^2.0.8"
   }
 }
