@@ -4,9 +4,4 @@ set -e
 
 clear
 
-(
-  cd ..
-  npm run build
-)
-
-yarn build
+npm run build

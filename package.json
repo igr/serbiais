@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "Serbia is...",
   "scripts": {
-    "clean": "gulp clean",
-    "dev": "gulp dev",
-    "serve": "gulp build && gulp serve",
-    "build": "gulp build"
+    "clean": "node spig.js clean",
+    "dev": "node spig.js dev",
+    "build": "node spig.js"
   },
   "repository": {
     "type": "git",
