@@ -1,8 +1,7 @@
 "use strict";
 
-const ids = require('./config/filters/ids');
+const ids = require('./filters/ids');
 
-console.log("AAAAAAAAAAAA")
 module.exports = nunjucksEnv => {
   nunjucksEnv
     .addFilter('extractIds', ids.extractIds)

@@ -21,7 +21,7 @@
     "url": "https://github.com/igr/serbiais/issues"
   },
   "homepage": "https://serbia.is",
-  "devDependencies": {
+  "dependencies": {
     "spignite": "^2.0.8"
   }
 }
