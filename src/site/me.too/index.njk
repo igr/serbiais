@@ -6,7 +6,7 @@ layout: "main"
 {% block main %}
 
 <main>
-<form netlify>
+<form name="add" method="POST" data-netlify="true" action="/mee.too/ok/">
 
   <fieldset>
     <legend><span class="number">1</span> Лични подаци</legend>
@@ -18,7 +18,7 @@ layout: "main"
   <fieldset>
     <legend><span class="number">2</span> Ко си?</legend>
     <label for="text">Напиши се. Брутално искрено. Не хрли.</label>
-    <textarea id="text"></textarea>
+    <textarea id="text" name="text"></textarea>
   </fieldset>
 
   <fieldset>
