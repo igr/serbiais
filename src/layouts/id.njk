@@ -1,0 +1,21 @@
+{% extends "base.njk" %}
+
+{% block main %}
+
+  <main>
+    <div class="photo">
+      <h1>{{ name }}</h1>
+      <img src="i.jpg" />
+      <div class="glow-wrap">
+        <i class="glow"></i>
+      </div>
+      <div id="ref">{{ date | rsDateShort }}<a href="{{ ref }}">☗</a></div>
+    </div>
+
+    <article>
+      {{ content | safe }}
+    </article>
+
+  </main>
+
+{% endblock %}

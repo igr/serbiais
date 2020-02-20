@@ -1,0 +1,46 @@
+---
+title: "Serbia is ME TOO"
+layout: "main"
+---
+
+{% block main %}
+
+<main>
+<form netlify>
+
+  <fieldset>
+    <legend><span class="number">1</span> Лични подаци</legend>
+    <label for="name">Име и презиме</label><input type="text" name="name" id="name">
+    <label for="mail">E-пошта</label><input type="email" name="mail" id="mail">
+    <label for="pass">Lozinka</label><input type="text" name="pass" id="pass">
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="number">2</span> Ко си?</legend>
+    <label for="text">Напиши се. Брутално искрено. Не хрли.</label>
+    <textarea id="text"></textarea>
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="number">3</span> Додатно</legend>
+    <label for="url">Твој лични сајт</label><input type="url" name="url" id="url">
+    <label for="photo">Фотографија 512x512</label><input type="file" class="custom-file-input" id="photo">
+  </fieldset>
+
+
+  <div id="warn">
+    Нема ограничења ко се може пријавити. Дајем себи за право да одбијем
+    пријаве које су рекламе и непримерене садржине.
+  </div>
+
+  <button type="submit">Пошаљи</button>
+</form>
+</main>
+
+{% endblock %}
+
+{% block head %}
+<script>
+
+</script>
+{% endblock %}

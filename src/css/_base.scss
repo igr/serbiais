@@ -1,0 +1,136 @@
+
+body {
+  font-size: 62.5%;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-main;
+  color: $color-black;
+  background-color: $color-white;
+  height: 100%;
+}
+
+p {
+	margin-top: 2rem;
+}
+.center {
+	text-align: center;
+}
+
+h1 {
+	font-size: 4rem;
+	margin-top: 0;
+	padding: 0;
+	font-weight: bold;
+	font-family: $font-title;
+}
+
+
+
+@function text-stroke($size: 2, $color: #fff, $correction: 0) {
+  $radius: $size - $correction;
+  $stroke: ();
+
+  @for $i from -$size through $size {
+    @for $k from -$size through $size {
+
+      $x: $k;
+      $y: $i;
+
+      @if $k > 0 {
+        $x: $k - 0.5;
+      } @elseif $k < 0 {
+        $x: $k + 0.5;
+      }
+
+      @if $i > 0 {
+        $y: $i - 0.5;
+      } @elseif $i < 0 {
+        $y: $i + 0.5;
+      }
+
+      @if ($x*$x + $y*$y <= $radius*$radius) {
+        $stroke: append($stroke, $i*1px $k*1px 0 $color, comma);
+      }
+    }
+  }
+
+  @return $stroke;
+}
+
+@mixin text-stroke($size: 2, $color: #fff, $correction: 0) {
+  text-shadow: text-stroke($size, $color, $correction);
+}
+
+
+h1#title {
+  font-size: 20rem;
+  line-height: 10rem;
+  margin-top: 10rem;
+  text-align: center;
+  text-transform: lowercase;
+  letter-spacing: -4rem;
+  font-style: italic;
+  font-weight: bold;
+  white-space:nowrap;
+  span {
+    @include text-stroke(4, #fff);
+  }
+}
+h2 {
+  margin-top: 1em;
+  font-size: 1.4rem;
+  text-align: center;
+  color: $color-gray;
+}
+
+em {
+	font-style: italic;
+}
+.show {
+	display: block !important;
+}
+a {
+	text-decoration: none;
+  color: $color-blue;
+  padding: 10px;
+  transition: .2s;
+  border-radius: 4px;
+  &:hover {
+    background-color: $color-red;
+    color: $color-white;
+  }
+}
+
+
+// structure
+
+main {
+  position: relative;
+  margin: 0 auto;
+  padding: 4rem 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-size: 1rem;
+  max-width: 800px;
+}
+
+#button {
+  margin: 4em auto;
+  width: 300px;
+}
+.btn {
+  color: #fff;
+  background: $color-black;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+  font-size: 1.1rem;
+  padding: 12px 35px;
+  display: inline-block;
+  transform: skew(-12deg);
+  &:visited { color: #fff; }
+  &:hover { background: $color-red; }
+  & > span { display: inline-block; transform: skew(12deg); } /* Un-skew the text */
+}
