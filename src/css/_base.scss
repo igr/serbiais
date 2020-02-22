@@ -116,12 +116,13 @@ main {
 
 #button {
   margin: 4em auto;
-  width: 300px;
+  width: 100%;
+  text-align: center;
 }
 .btn {
   color: #fff;
   background: $color-black;
-  font-weight: 700;
+  font-weight: bold;
   text-align: center;
   text-decoration: none;
   border: 0;
@@ -134,3 +135,24 @@ main {
   &:hover { background: $color-red; }
   & > span { display: inline-block; transform: skew(12deg); } /* Un-skew the text */
 }
+
+
+
+@media only screen and (max-width: 768px) {
+  h1#title {
+    font-size: 12vw;
+    letter-spacing: 0;
+    margin: 1em 0;
+    line-height: normal;
+    span {
+      text-shadow: none;
+    }
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  #list {
+    margin: 0 10px;
+  }
+}
+
