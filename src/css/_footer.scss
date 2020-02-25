@@ -15,11 +15,11 @@ footer {
     text-decoration: underline;
     padding: 0;
   }
-}
-@media only screen and (max-width: 768px) {
-  footer {
-    height:50px;
-    font-size: 11px;
-  }
-}
+  font-family: $font-label;
 
+  @include for_tablet {
+    height:50px;
+    font-size: 10px;
+  }
+
+}

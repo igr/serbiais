@@ -17,52 +17,12 @@ $color-blue: #0074d9;
 
 /** Fonts */
 
-@font-face {
-  font-family: "ObjectSans";
-  src: url("/fonts/ObjectSans-Regular.otf") format("opentype")
-}
-@font-face {
-  font-family: "ObjectSans";
-  font-weight: bold;
-  src: url("/fonts/ObjectSans-Heavy.otf") format("opentype")
-}
-@font-face {
-  font-family: "ObjectSans";
-  font-style: italic;
-  src: url("/fonts/ObjectSans-Slanted.otf") format("opentype")
-}
-@font-face {
-  font-family: "ObjectSans";
-  font-weight: bold;
-  font-style: italic;
-  src: url("/fonts/ObjectSans-HeavySlanted.otf") format("opentype")
-}
-
-@font-face {
-  font-family: "Lora";
-  src: url("/fonts/Lora-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Lora";
-  font-weight: bold;
-  src: url("/fonts/Lora-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Lora";
-  font-style: italic;
-  src: url("/fonts/Lora-Italic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Lora";
-  font-style: italic;
-  font-weight: bold;
-  src: url("/fonts/Lora-BoldItalic.ttf") format("truetype");
-}
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Lora:400,400i,700,700i&display=swap');
 
 
-$font-title:        'ObjectSans', sans-serif;
+$font-title:        'Lato', sans-serif;
 $font-main:         'Lora', serif;
-$font-label:        'ObjectSans', sans-serif;
+$font-label:        'Lato', sans-serif;
 
 /** CSS VARS **/
 

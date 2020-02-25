@@ -1,12 +1,15 @@
-.photo{
+.photo {
   position: absolute;
   top: 400px;
   left: 50%;
   transform: translate(-50%, -50%);
   display: block;
+  @include for_phone {
+    top: 300px;
+  }
 }
 
-.photo img{
+.photo img {
   width: 512px;
   height: 512px;
   object-fit: cover;
@@ -15,6 +18,11 @@
   display: block;
   transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
   margin-top: -10px;
+
+  @include for_phone {
+    width: 90vw;
+    height: auto;
+  }
 }
 
 .photo:hover img{
@@ -60,10 +68,24 @@
 
   margin: 0;
   line-height: 0.85;
-  text-shadow: 2px 2px 2px #fff;
+  text-shadow:
+    2px 2px 1px #fff,
+    2px -2px 1px #fff,
+    -2px 2px 1px #fff,
+    -2px -2px 1px #fff
+    ;
+  font-family: $font-main;
+  @include for_tablet {
+    font-size: 14vw;
+    transform: translate(-5%, -75%);
+  }
+  @include for_phone {
+    font-size: 14vw;
+    transform: translate(0, -125%);
+  }
 }
 .photo a {
-  color: $color-black;
+  color: $color-blue;
   &:hover {
     color: $color-white;
   }
@@ -84,31 +106,16 @@ article {
   p {
     margin-top: 2em;
   }
-}
-
-
-@media only screen and (max-width: 768px) {
-  article {
+  @include for_tablet {
     margin-left: 20px;
-    margin-right: 10px;
+    margin-right: 20px;
+    font-size: 1.4rem;
+    margin-top: 660px;
+  }
+  @include for_phone {
+    margin-left: 20px;
+    margin-right: 20px;
     font-size: 1.2rem;
     margin-top: 500px;
-  }
-  .photo {
-    top: 300px;
-  }
-  .photo h1 {
-    font-size: 16vw;
-    transform: translate(-5%, -75%);
-  }
-  //.photo img{
-  //  width: 90vw;
-  //  height: auto;
-  //}
-}
-@media only screen and (max-width: 512px) {
-  .photo img{
-    width: 90vw;
-    height: auto;
   }
 }
