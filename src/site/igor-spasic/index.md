@@ -1,4 +1,5 @@
 ---
+title: "Igor Spasić"
 name: "Игор Спасић"
 id: 1
 date: 2020-02-02
