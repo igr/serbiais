@@ -13,5 +13,13 @@ footer {
   a {
     color: $color-white;
     text-decoration: underline;
+    padding: 0;
   }
 }
+@media only screen and (max-width: 768px) {
+  footer {
+    height:50px;
+    font-size: 11px;
+  }
+}
+

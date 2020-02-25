@@ -64,7 +64,8 @@ h1 {
 
 h1#title {
   font-size: 20rem;
-  line-height: 10rem;
+  line-height: 200px;
+  height: 200px;
   margin-top: 10rem;
   text-align: center;
   text-transform: lowercase;
@@ -93,7 +94,7 @@ a {
 	text-decoration: none;
   color: $color-blue;
   padding: 10px;
-  transition: .2s;
+  transition: background-color .2s;
   border-radius: 4px;
   &:hover {
     background-color: $color-red;
@@ -139,11 +140,15 @@ main {
 
 
 @media only screen and (max-width: 768px) {
+  footer {
+    font-size: 10px;
+  }
   h1#title {
-    font-size: 12vw;
-    letter-spacing: 0;
-    margin: 1em 0;
-    line-height: normal;
+    font-size: 14vw;
+    letter-spacing: -4px;
+    margin: 1em 0 0 0;
+    line-height: 20px;
+    height: inherit;
     span {
       text-shadow: none;
     }
