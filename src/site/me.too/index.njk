@@ -6,6 +6,12 @@ layout: "main"
 {% block main %}
 
 <main>
+
+<p style="margin-bottom: 2em">
+U pitanju je <b>jedna, i samo jedna</b> priča o tebi - u kojoj možeš da kažeš sve šta želiš. Pokušaj da se opišeš sa svim vrlinama, strahovima, previranjima, uspesima, nadanjima... Ili, pak, opiši važan detalj života, borbu koju boriš ili si (pre)borio; nešto bez čega tvoj život ne bi bio ti... Ili, pak, napiši rečenicu-dve koje su karakteristične za tebe. Kako god, samo budi iskren i svoj.
+Hvala.
+</p>
+
 <form name="add" method="POST" data-netlify="true" action="/me.too/ok/index.html">
 
   <div hidden aria-hidden="true">
@@ -24,6 +30,7 @@ layout: "main"
   <fieldset>
     <legend><span class="number">2</span> Ко си?</legend>
     <label for="text">Напиши се. Опиши се. Брутално искрено. Не хрли. Стани и размисли: ко је ово биће са твојим именом? Шта га чини посебним? Шта имаш у себи? Шта се догодило у твом животу? Шта ти недостаје? Чему стремиш? Употреби колико год желиш речи.</label>
+    <p style="font-size: 0.85em">(користи <code>_</code> или <code>**</code> да нагласиш делове текста.)</p>
     <textarea id="text" name="text"></textarea>
   </fieldset>
 
