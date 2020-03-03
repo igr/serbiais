@@ -21,16 +21,16 @@ layout: "main"
 
 <main>
   <div class="flex" id="list">
-    {% for p in site.ids() %}
+    {% for p in site.ids() | reverse %}
       <div><a href="{{ p.url }}">{{ p.name }}</a></div>
     {% endfor %}
-    <div><a href="/me.too/">Jelena</a></div>
-    <div><a href="/me.too/">Dejan</a></div>
-    <div><a href="/me.too/">Milena</a></div>
     <div><a href="/me.too/">Ema</a></div>
     <div><a href="/me.too/">Oleg</a></div>
     <div><a href="/me.too/">Lina</a></div>
+
+    {% for i in range(0, (site.ids().length + 3) % 4) -%}
     <div>&nbsp;</div>
+    {%- endfor %}
   </div>
   <div id="button"><a href="/me.too/" class="btn"><span>додај се</span></a></div>
 </main>
