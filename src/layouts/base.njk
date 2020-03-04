@@ -21,7 +21,39 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <title>{{ title }}</title>
+
+    <title>{{ 'Serbia.is: ' + name if name else title }}</title>
+    <meta property="og:title" content="{{ 'Serbia.is: ' + name if name else title }}">
+    <meta property="og:type" content="website">
+
+    {% if home %}
+      <meta name="description" content="{{ site.description }}">
+      <meta property="og:description" content="{{ site.description }}"/>
+    {% else %}
+      <meta name="description" content="{{ description if description else summary }}">
+      <meta property="og:description" content="{{ description if description else summary }}"/>
+    {% endif %}
+
+    <meta property="og:locale" content="sr_RS"/>
+
+    <meta property="og:url" content="{{ link }}">
+    <meta property="og:site_name" content="Serbia.is"/>
+    {% if og.img %}
+      <meta property="og:image" content="{{site.baseURL}}/{{url}}{{ og.img }}"/>
+    {% elseif id %}
+      <meta property="og:image" content="{{site.baseURL}}/{{ url }}/i.jpg"/>
+    {% elseif home %}
+      <meta property="og:image" content="{{site.baseURL}}/og.png"/>
+    {% endif %}
+
+
+
+
+
+
+
+
+
     {% block head %}{% endblock %}
   </head>
   <body>

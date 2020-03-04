@@ -11,6 +11,7 @@ Spig
   ._('INIT')
   .pageMeta()
   .pageLinks()
+  .summary()
   .collect('id')
 
   ._('RENDER')
