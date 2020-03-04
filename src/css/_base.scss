@@ -122,8 +122,8 @@ main {
   position: relative;
   margin: 0 auto;
   padding: 4rem 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  //overflow-x: hidden;
+  //overflow-y: hidden;
   font-size: 1rem;
   max-width: 800px;
   @include for-phone {
