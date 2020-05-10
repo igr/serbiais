@@ -23,6 +23,6 @@
   },
   "homepage": "https://serbia.is",
   "dependencies": {
-    "spignite": "^2.0.8"
+    "spignite": "^2.1.2"
   }
 }
