@@ -1,0 +1,16 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  div {
+    a {
+      display: block;
+    }
+    flex: 1 0 25%;
+  }
+}
+
+#list {
+  a {
+    letter-spacing: -1px;
+  }
+}

@@ -1,0 +1,24 @@
+{% extends "base.njk" %}
+
+{% block head %}
+{% endblock %}
+
+{% block main %}
+
+  <main>
+    <div class="photo">
+      <h1>{{ name }}</h1>
+      <img src="i.jpg" />
+      <div class="glow-wrap">
+        <i class="glow"></i>
+      </div>
+      <div id="ref">{{ date | rsDateLong }}{% if ref %}<a href="{{ ref }}" target="_blank">☗</a>{% endif %}</div>
+    </div>
+
+    <article>
+      {{ content | safe }}
+    </article>
+
+  </main>
+
+{% endblock %}
