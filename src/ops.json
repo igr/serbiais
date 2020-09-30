@@ -1,0 +1,7 @@
+{
+  "render": {
+    "extensions": [
+      "**/*.md"
+    ]
+  }
+}
